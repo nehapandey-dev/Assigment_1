@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import './App.css';
+import Decrement from './Decrement';
+import Increment from './Increment';
+import ResetButton from './ResetButton';
 
 
 function App() {
   const [count, setCount] = useState(0);
 
-  //Created child function or component
   const increment = () => {
     setCount(count + 1)
   }
@@ -28,9 +30,9 @@ function App() {
         </div>
         <div className="button_box">
           <div>
-            <button className='increment_button' onClick={increment}><span>+</span></button>
-            <button className="reset-button" onClick={reset}>RESET</button>
-            <button className='decrement_button' onClick={decrement}><span>-</span></button>
+            <Increment increment={increment} />
+            <ResetButton reset={reset} />
+            <Decrement decrement={decrement} />
           </div>
         </div>
       </div>
